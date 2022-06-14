@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap');
+
+body{
+    background-color: #3568cf;
+    font-family: 'Signika Negative', sans-serif;
+    font-weight: Light;
+    font-size: 10px;
+    color:#ffF;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.bi{
+    font-size: 20px;
+}
+.title{
+    font-size: 35px;
+    text-align: center;
+}
+
+.operations{
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 25px 25px 0px 0px;
+    width: 80vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.op{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-op{
+    cursor:pointer;
+    border-radius: 10px;
+    font-size: 9px;
+    padding: 10px 15px;
+    height: 20px;
+    background-color: #fff;
+    color: #182848;
+    transition: 0.4s ease-in-out all;
+}
+.btn-op .Search{
+    background-color: #fff0;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    width: 0px;
+    transition: 0.6s ease-in-out all;
+}
+
+.btn-op:nth-child(3):hover .Search {
+    width: 180px;
+    color:#fff;
+    outline: none;
+    transition: 0.6s ease-in-out all;
+    animation-delay: 1s;
+}
+
+
+.btn-op:hover{
+    background-color: #182848;
+    color:#fff;
+    transition: 0.4s ease-in-out all;
+}
+
+
+
+.container{
+    width: 80.4vw;
+    background-color: #fff;
+}
