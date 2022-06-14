@@ -10,7 +10,6 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
-
 }
 .bi{
     font-size: 20px;
@@ -45,7 +44,6 @@ body{
     height: 20px;
     background-color: #fff;
     color: #182848;
-    transition: 0.4s ease-in-out all;
 }
 .btn-op .Search{
     background-color: #fff0;
@@ -53,15 +51,18 @@ body{
     border: none;
     outline: none;
     width: 0px;
-    transition: 0.6s ease-in-out all;
+}
+
+.btn-op:nth-child(3) .Search {
+    color:rgb(0, 0, 0);
+    outline: none;
 }
 
 .btn-op:nth-child(3):hover .Search {
     width: 180px;
-    color:#fff;
+    color:rgb(241, 241, 241);
     outline: none;
-    transition: 0.6s ease-in-out all;
-    animation-delay: 1s;
+    transition: 0.4s all linear;
 }
 
 
@@ -70,6 +71,11 @@ body{
     color:#fff;
     transition: 0.4s ease-in-out all;
 }
+
+.btn-op:active{
+    box-shadow: 0px 0px 10px #182848e3;
+}
+
 
 .nameWindow{
     text-align: center;
@@ -94,9 +100,9 @@ body{
 }
 
 .note{
-    color:#182848;
+    color:#FFF;
     width: 20%;
-    border: 2px solid #182848;
+    background-color:  #182848;
     border-radius: 15px;
     margin: 15px;
     gap: 5px;
@@ -105,12 +111,16 @@ body{
 .note .top{
     padding: 5px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 .top .Name{
+    padding-left: 15px;
+    color:#fff;
+    background-color: #18284800;
     outline: none;
     border: none;
 }
+
 .content{
     display: flex;
     align-items: center;
@@ -118,6 +128,8 @@ body{
 }
 
 .content textarea{
+    color:#fff;
+    background-color: #18284800;
     border: none;
     resize: none;
     padding-bottom: 15px;
