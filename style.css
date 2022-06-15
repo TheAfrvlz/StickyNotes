@@ -6,7 +6,7 @@ body{
     font-weight: Light;
     font-size: 10px;
     color:#ffF;
-    gap: 10px;
+    gap: 25px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -23,6 +23,7 @@ body{
     background-color: #fff;
     border: 2px solid #fff;
     border-radius: 25px 25px 0px 0px;
+    flex-wrap: wrap;
     width: 80vw;
     height: 80px;
     display: flex;
@@ -56,6 +57,7 @@ body{
 .btn-op:nth-child(3) .Search {
     color:rgb(0, 0, 0);
     outline: none;
+    transition: 0.4s all linear;
 }
 
 .btn-op:nth-child(3):hover .Search {
@@ -77,34 +79,41 @@ body{
 }
 
 
+.container{
+    width: 80.4vw;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageContainer{ 
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 .nameWindow{
     text-align: center;
     color: #182848;
     font-size: 30px;
 }
 
-.container{
-    width: 80.4vw;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .notes{
     display: flex;
-    width: 95%;
+    width: 100%;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
 }
 
 .note{
+    margin: 15px;
     color:#FFF;
-    width: 20%;
+    width: 250px;
     background-color:  #182848;
     border-radius: 15px;
-    margin: 15px;
     gap: 5px;
 }
 
@@ -135,4 +144,43 @@ body{
     padding-bottom: 15px;
     outline: none;
     border: none;
+}
+
+.titleP {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.titleP .nameWindow{
+    cursor: pointer;
+}
+
+.titleP i{
+    position: absolute;
+    top:25%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-size: 25px;
+    color:#182848;
+}
+
+.titleP .bi-trash3-fill{
+    left: 93%;
+}
+
+.titleP .bi-chevron-up{
+    left: 3%;
+}
+.titleP i:hover{
+    color:#fff;
+    background-color:#182848;
 }
