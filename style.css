@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap');
 
 body{
-    background-color: #3568cf;
+    background-color:#182848;
     font-family: 'Signika Negative', sans-serif;
     font-weight: Light;
     font-size: 10px;
@@ -11,6 +11,7 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
 .bi{
     font-size: 20px;
 }
@@ -57,25 +58,26 @@ body{
 .btn-op:nth-child(3) .Search {
     color:rgb(0, 0, 0);
     outline: none;
-    transition: 0.4s all linear;
+    transition: 0.4s linear;
 }
 
 .btn-op:nth-child(3):hover .Search {
     width: 180px;
     color:rgb(241, 241, 241);
     outline: none;
-    transition: 0.4s all linear;
+    transition: 0.4s linear;
 }
 
 
 .btn-op:hover{
     background-color: #182848;
     color:#fff;
-    transition: 0.4s ease-in-out all;
+    transition: 0.4s ease-in-out;
 }
 
 .btn-op:active{
-    box-shadow: 0px 0px 10px #182848e3;
+    transition: 0.1s ease-in-out;
+    box-shadow: 0px 0px 7px #182848e3;
 }
 
 
