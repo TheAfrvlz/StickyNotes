@@ -24,6 +24,7 @@ function FcreateNote(e){
             <h1>Name of P</h1>
             <input type="text" name="" id="Text" placeholder="Page Name">
             <select name="select">
+            <option value=""> Select</option>
             </select> 
         </div>
         <div class="buttons">
@@ -31,22 +32,31 @@ function FcreateNote(e){
                 <h1>Accept</h1> 
                 <i class="bi bi-check-square"></i>
             </div>
-            <div class="button Conf">
-                <h1>Confirm</h1> 
-                <i class="bi bi-exclamation-triangle"></i>
-            </div>
             <div class="button Can">
                 <h1>Cancel</h1> 
                 <i class="bi bi-x-circle"></i>
             </div>
         </div>
-
     </div>
     </div>`);
     
     console.log(window.document.body.children);
     Cancel = document.querySelector(".Can");
     Cancel.addEventListener("click",cancelModal);
+    Accept = document.querySelector(".Acp");
+    Accept.addEventListener("click",()=>{
+        Notes.innerHTML += `
+        <div class="note">
+            <div class="top">
+                <input class="Name" placeholder="Title">
+                <i class="bi bi-trash3-fill" style="cursor: pointer;"></i>
+                <i class="bi bi-unlock-fill" style="cursor: pointer;"></i>
+            </div>
+            <div class="content">
+                <textarea rows="7" cols="25"></textarea>
+            </div>
+        </div>`
+    });
     /*Notes.innerHTML += `<div class="note">
     <div class="top">
         <input class="Name" placeholder="Title">
@@ -62,10 +72,12 @@ function FcreateNote(e){
 function FdeleteNotes(e){
     window.document.body.insertAdjacentHTML('afterbegin', `<div class="modal-bg">
     <div class="modal">
-        <h1>Delete Notes</h1>
+        <h1>
+        Delete Notes</h1>
         <div class="info">
             <h1>Select the page</h1>
             <select name="select">
+            <option value=""> Select</option>
             </select> 
         </div>
         <div class="buttons">
@@ -95,18 +107,12 @@ function FaddPage(e){
         <h1>New Note</h1>
         <div class="info">
             <h1>Name of Page</h1>
-            <input type="text" name="" id="Text" placeholder="Page Name">
-            <select name="select">
-            </select>           
+            <input type="text" name="" id="Text" placeholder="Page Name">         
         </div>
         <div class="buttons">
             <div class="button Acp">
                 <h1>Accept</h1> 
                 <i class="bi bi-check-square"></i>
-            </div>
-            <div class="button Conf">
-                <h1>Confirm</h1> 
-                <i class="bi bi-exclamation-triangle"></i>
             </div>
             <div class="button Can">
                 <h1>Cancel</h1> 
@@ -119,8 +125,23 @@ function FaddPage(e){
     console.log(window.document.body.children);
     Cancel = document.querySelector(".Can");
     Cancel.addEventListener("click",cancelModal);
+   
     Accept = document.querySelector(".Acp");
-    Accept.addEventListener("click",createPage);
+    Accept.addEventListener("click",()=>{
+        console.log("crear pagina");
+        Container.innerHTML += `
+        <div class="pageContainer">
+            <div class="titleP">
+                <h1 class="nameWindow">   ${document.getElementById("Text").value} </h1>
+                <i class="bi bi-chevron-up"></i>
+                <i class="bi bi-trash3-fill"></i>
+            </div>
+            <div class="notes">
+            </div>
+        </div>`
+        cancelModal();
+    });
+
     /*Container.innerHTML += ` <div class="pageContainer">
     <div class="titleP">
         <h1 class="nameWindow">   Food recipes </h1>
@@ -134,7 +155,35 @@ function FaddPage(e){
 }
 
 function FdeletePage(e){
-    Container.innerHTML = '';
+    window.document.body.insertAdjacentHTML('afterbegin', `<div class="modal-bg">
+    <div class="modal">
+        <h1>
+        Delete Notes</h1>
+        <div class="info">
+            <h1>Select the page</h1>
+            <select name="select">
+            <option value=""> Select</option>
+            </select> 
+        </div>
+        <div class="buttons">
+            <div class="button Acp">
+                <h1>Accept</h1> 
+                <i class="bi bi-check-square"></i>
+            </div>
+            <div class="button Can">
+                <h1>Cancel</h1> 
+                <i class="bi bi-x-circle"></i>
+            </div>
+        </div>
+
+    </div>
+    </div>`);
+    
+    console.log(window.document.body.children);
+    Cancel = document.querySelector(".Can");
+    Cancel.addEventListener("click",cancelModal);
+    Notes.innerHTML = '';
+    //Container.innerHTML = '';
 }
 
 function Fdownload(){
