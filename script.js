@@ -7,6 +7,7 @@ const deletePage = document.querySelector("#deleteP");
 const Notes = document.querySelector(".notes");
 const Container = document.querySelector(".container");
 const Modal = document.querySelector(".modal-bg");
+const Alerts = document.querySelector(".alerts");
 let Cancel,Accept,Warning; 
 
 function cancelModal(e){
@@ -20,7 +21,7 @@ function FcreateNote(e){
     <div class="modal">
         <h1>New Note</h1>
         <div class="info">
-            <h1>Name of Page</h1>
+            <h1>Name of P</h1>
             <input type="text" name="" id="Text" placeholder="Page Name">
             <select name="select">
             </select> 
@@ -59,8 +60,31 @@ function FcreateNote(e){
 }
 
 function FdeleteNotes(e){
-    console.log(e.target);
-    console.log("delete notes");
+    window.document.body.insertAdjacentHTML('afterbegin', `<div class="modal-bg">
+    <div class="modal">
+        <h1>Delete Notes</h1>
+        <div class="info">
+            <h1>Select the page</h1>
+            <select name="select">
+            </select> 
+        </div>
+        <div class="buttons">
+            <div class="button Acp">
+                <h1>Accept</h1> 
+                <i class="bi bi-check-square"></i>
+            </div>
+            <div class="button Can">
+                <h1>Cancel</h1> 
+                <i class="bi bi-x-circle"></i>
+            </div>
+        </div>
+
+    </div>
+    </div>`);
+    
+    console.log(window.document.body.children);
+    Cancel = document.querySelector(".Can");
+    Cancel.addEventListener("click",cancelModal);
     Notes.innerHTML = '';
 }
 
@@ -95,7 +119,8 @@ function FaddPage(e){
     console.log(window.document.body.children);
     Cancel = document.querySelector(".Can");
     Cancel.addEventListener("click",cancelModal);
-
+    Accept = document.querySelector(".Acp");
+    Accept.addEventListener("click",createPage);
     /*Container.innerHTML += ` <div class="pageContainer">
     <div class="titleP">
         <h1 class="nameWindow">   Food recipes </h1>
@@ -143,6 +168,38 @@ class stickyNote{
     }
 }
 
-const WebNotes = new stickyNote();
+document.addEventListener("DOMContentLoaded",()=>{
+    if(Container.children.length === 0){
+        for(var i = 0; i < 2; i++){
+            if( i === 0){
+                Alerts.innerHTML += `<div class="alert transitionIn ">
+                <i class="bi bi-x-circle"></i> <h1> Sin Pagina</h1>
+            </div>`;
+            } 
+
+            if( i === 1){
+                Alerts.innerHTML += `<div class="alert transitionIn">
+                <i class="bi bi-x-circle"></i> <h1> Sin Notas</h1>
+                </div>`;
+            } 
+        }
+        setInterval(()=>{
+            for(var i = 0; i < 2; i++){
+                if( i === 0){
+                    Alerts.children[0].classList.add("transitionOut");
+                } 
+    
+                if( i === 1){
+                    Alerts.children[1].classList.add("transitionOut")
+                } 
+            }
+            setTimeout(()=>{
+                Alerts.innerHTML = '';
+            },2500);
+        },4500);
+        
+    }
+
+});
 
 Events();

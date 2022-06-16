@@ -274,3 +274,55 @@ body{
     margin: 0;
     padding: 0;
 }
+
+.alerts{
+    width: 140px;
+    position: fixed;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    left: 10px;
+}
+.alert{
+    border-radius: 10px;
+    background-color: rgb(201, 92, 92);
+    width: 140px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;  
+}
+.alert h1{
+    font-size: 15px;
+}
+.alert i{
+    font-size: 25px;
+}
+.transitionIn{
+    animation: alertIn 2.5s linear;
+}
+.transitionOut{
+    animation: alertOut 2.5s linear;
+}
+
+@keyframes alertIn{
+    0%{
+        margin-left: 100%;
+        opacity: 0;
+    }
+    100%{
+        margin-left: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes alertOut{
+    0%{
+        margin-left: 0%;
+        opacity: 1;
+    }
+    100%{margin-left: -100%;
+        opacity: 0;}
+}
